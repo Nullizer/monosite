@@ -1,0 +1,43 @@
+.item-a {
+  grid-area: header;
+  background-color: aqua;
+}
+
+.item-b {
+  grid-area: main;
+  background-color: blueviolet;
+}
+
+.item-c {
+  grid-area: sidebar;
+  background-color: coral;
+}
+
+.item-d {
+  grid-area: footer;
+  background-color: forestgreen;
+}
+
+.container {
+  max-width: 1280px;
+  box-shadow: 0 0 10px 2px purple;
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  // grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "main   main   ...... sidebar"
+    "footer footer footer footer";
+  // grid-gap: 10px;
+  // place-content: normal space-evenly; // Edge not supported
+  justify-content: space-evenly;
+  // justify-items: center;
+}
+
+.container > div {
+  min-height: 64px;
+}
+
+.emoji-board {
+  font-size: 2rem;
+}

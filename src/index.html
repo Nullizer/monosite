@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lab Page</title>
+    <link id="entry" href="esm/main.js" rel="modulepreload">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <script nomodule>/*@cc_on document.write('\x3Cscript id="_iealwn_js" src="vendor/old-ie-warn.js">\x3C/script>'); @*/</script>
+  </head>
+  <body>
+    <script>
+      import(document.getElementById('entry').href)
+      window.supportsDynamicImport = true
+    </script>
+    <script nomodule src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch&flags=gated"></script>
+	  <script>
+      if (!window.supportsDynamicImport) {
+        var entry = document.getElementById('entry').href
+        var systemJsLoaderTag = document.createElement('script')
+        systemJsLoaderTag.src = 'vendor/s.min.js'
+        systemJsLoaderTag.addEventListener('load', function () {
+          var sysModLoaderTag = document.createElement('script')
+          sysModLoaderTag.setAttribute('type', 'module')
+          sysModLoaderTag.innerHTML = "System.import('" + entry.replace(/esm/, 'sys') + "')"
+          document.body.appendChild(sysModLoaderTag)
+
+          var legacyLoaderTag = document.createElement('script')
+          legacyLoaderTag.setAttribute('nomodule', '')
+          legacyLoaderTag.innerHTML = "System.import('" + entry.replace(/esm/, 'es5') + "')"
+          document.body.appendChild(legacyLoaderTag)
+        })
+        document.head.appendChild(systemJsLoaderTag)
+      }
+    </script>
+  </body>
+</html>

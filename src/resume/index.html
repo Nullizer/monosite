@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yin Zhikai's Resume</title>
+  <base target="_blank">
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    body {
+      font-family: "Roboto Slab", Verdana, "Courier New", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei",
+        "Source Han Sans CN", serif, "Noto Color Emoji", "Twemoji Mozilla", "Segoe UI Emoji";
+    }
+    h1:not(main > h1), h2, h3 {
+      font-family: "Open Sans", "Fira Sans", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",
+        "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei",
+        sans-serif, "Noto Color Emoji", "Twemoji Mozilla", "Segoe UI Emoji";
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    main {
+      display: grid;
+      grid-template-areas:
+        "title title"
+        "contact contact"
+        ". skills"
+        ". skills"
+        ". skills";
+      grid-column-gap: 2rem;
+      max-width: 70rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    main > h1, article > h1 {
+      color: #AE3320;
+      margin-bottom: 0.5rem;
+    }
+    h3 {
+      margin-bottom: 0.3rem;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 0.3rem;
+    }
+    .experience summary {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .experience summary > span:first-child {
+      flex: 1;
+      min-width: 14em;
+    }
+    .experience summary > span:last-child {
+      flex: 0 0 12em;
+      font-weight: normal;
+      color: #6E6B6C;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+    }
+    ul > li:before {
+      content: "• ";
+      color: #AE3320;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    .note {
+    }
+    .title {
+      grid-area: title;
+      justify-self: center;
+    }
+    .contact {
+      grid-area: contact;
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+    }
+    .contact li:before {
+      content: "";
+    }
+    .skills {
+      grid-area: skills;
+    }
+    .separator {
+      min-width: 4em;
+      text-align: center;
+    }
+    details > summary + ul {
+      transition: .5s;
+      overflow: hidden;
+    }
+
+    @media (max-width: 680px) {
+      main {
+        display: block;
+      }
+      .contact {
+        display: block;
+      }
+      main > h1, article > h1 {
+        text-align: center;
+      }
+      .separator {
+        display: none;
+      }
+    }
+    @media print {
+      body {
+        margin: 0px;
+        font-size: 14px;
+      }
+    }
+  </style>
+  <style id="dynamicStyle"></style>
+  <script nomodule>/*@cc_on document.write('\x3Cscript id="_iealwn_js" src="/vendor/old-ie-warn.js">\x3C/script>'); @*/</script>
+</head>
+<body>
+  <main>
+    <h1 class="title" title="感兴趣可以联系我">Yin Zhikai</h1>
+    <ul class="contact">
+      <li title="将[at]换成@">nullizer[at]gmail.com</li>
+      <li class="separator">·</li>
+      <li>Telegram: <a href="https://t.me/kainx">@kainx</a></li>
+      <li class="separator">·</li>
+      <li><a href="https://github.com/Nullizer">github.com/Nullizer</a></li>
+    </ul>
+    <article class="intro">
+      <h1>个人介绍</h1>
+      <p>Arch Linux 爱好者<br />
+         自由软件信徒<br />
+         Web 技术研究者</p>
+    </article>
+    <article class="experience">
+      <h1>工作经历</h1>
+      <details open>
+        <summary><span>端傳媒</span><span>2016-2017 深圳（远程）</span></summary>
+        <ul>
+          <li>职位：前端工程师</li>
+          <li>工作内容：
+            <ol>
+              <li><a href="https://initiumlab.com">initiumlab.com</a> 改版</li>
+              <li>主站前端页面优化</li>
+              <li>问卷系统设计</li>
+              <li>微信活动页面开发</li>
+            </ol>
+          </li>
+          <li>技术环境：
+            <a href="https://nodejs.org">Node.js</a>
+            <a href="https://www.docker.com">Docker</a>
+            <a href="https://www.python.org">Python</a>
+            Linux
+          </li>
+        </ul>
+      </details>
+      <details open>
+        <summary><span>艾合石数码（深圳）有限公司</span><span>2014-2016 深圳</span></summary>
+        <ul>
+          <li>职位：服务端工程师</li>
+          <li>工作内容：
+            <ol>
+              <li>为 APP 提供后台 API</li>
+              <li>移动应用的数据统计后端研发</li>
+              <li>编写维护公司的官网和产品页面，编写用于用户活动的微信页面</li>
+              <li>服务器运维，部署优化，最大化自动化</li>
+              <li>运维内网的代码持续集成、自动构建服务，改善开发体验和生产效率</li>
+            </ol>
+          </li>
+          <li>技术环境：
+            <a href="https://php.net">PHP</a>
+            <a href="https://nodejs.org">Node.js</a>
+            <a href="https://www.yiiframework.com">Yii2</a>
+            <a href="https://www.mysql.com">MySQL</a>
+            Linux
+          </li>
+        </ul>
+      </details>
+    </article>
+    <article class="skills">
+      <h1>技能</h1>
+      <section>
+        <h3>Web 开发</h2>
+        <ul>
+          <li><a href="https://html.spec.whatwg.org/#is-this-html5?">HTML5</a></li>
+          <li><a href="https://w3.org/Style/CSS/specs.en.html">CSS</a></li>
+          <li><a href="https://ecma-international.org/publications/standards/Ecma-262.htm">JavaScript(ECMAScript)</a></li>
+          <li><a href="https://www.typescriptlang.org">TypeScript</a></li>
+          <li><a href="https://nodejs.org">Node.js</a></li>
+          <li><a href="https://php.net">PHP</a></li>
+          <li><a href="https://reactjs.org">React</a></li>
+          <li><a href="https://vuejs.org">Vue.js</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>软件开发</h2>
+        <ul>
+          <li><a href="https://rust-lang.org">Rust</a></li>
+          <li>C/<a href="https://isocpp.org">C++</a></li>
+          <li><a href="https://java.com">Java</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>语言</h3>
+        <ul>
+          <li><a href="https://zh.wikipedia.org/wiki/西南官话">西南官话</a>（母语）</li>
+          <li>普通话</li>
+          <li>英语</li>
+        </ul>
+      </section>
+    </article>
+    <article class="education">
+      <h1>教育背景</h1>
+      <ul>
+        <li>学历：大专</li>
+        <li>学校：四川职业技术学院（2011-2014）</li>
+        <li>专业：计算机网络技术</li>
+        <li>主修课程：广域网构建 网络安全 网络操作系统 Oracle数据库 ASP.Net JavaScript C#桌面程序开发 电子商务概论</li>
+      </ul>
+    </article>
+  </main>
+  <script>
+    const heights = Array.from(document.querySelectorAll('details > summary + ul'))
+      .map(ul => parseInt(getComputedStyle(ul).height))
+    document.getElementById('dynamicStyle').innerHTML = `
+      @media screen {
+        details > summary + ul {
+          max-height: 0;
+        }
+        details[open] > summary + ul {
+          max-height: ${Math.max.apply(null, heights)}px;
+        }
+      }`
+  </script>
+</body>
+</html>

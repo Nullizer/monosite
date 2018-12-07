@@ -1,0 +1,9 @@
+{
+  "extends": ".",
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "es5",
+    "outDir": "temp/dist/es5",
+  },
+  "include": ["temp/dist/sys"]
+}
