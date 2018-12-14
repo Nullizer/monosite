@@ -1,7 +1,6 @@
 os:
   - linux
   - osx
-  - windows
 
 dist: xenial
 
@@ -20,6 +19,9 @@ node_js:
 
 script:
   - npm run build && npm run minify
+
+after_script:
+  - tree -h temp/
 
 jobs:
   include:
