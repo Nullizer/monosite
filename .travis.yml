@@ -3,6 +3,7 @@ dist: xenial
 language: node_js
 node_js:
   - "node"
+  - "lts/*"
 
 before_install:
   - cat /etc/os-release
@@ -12,3 +13,7 @@ before_install:
 
 script:
   - npm run build && npm run minify
+
+after_script:
+  - ls -lh
+  - tree temp/
