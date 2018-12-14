@@ -1,6 +1,8 @@
 dist: xenial
 
 language: node_js
+node_js:
+  - "node"
 
 before_install:
   - cat /etc/os-release
