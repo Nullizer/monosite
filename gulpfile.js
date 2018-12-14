@@ -5,8 +5,9 @@ const gulp = require('gulp')
 const { srcDir, distDir, vendorDir } = require('./tasks/config')
 const rimraf = require('rimraf')
 
-const assetsSrc = [
+const assetsInSrc = [
   '**/*.html',
+  '**/*.css',
   '**/*.ico',
   '**/*.png',
   '**/*.svg',
@@ -14,8 +15,8 @@ const assetsSrc = [
 ].map(p => srcDir + p)
 const SjsSrc = resolve(__dirname, 'node_modules/systemjs/dist/s.min.js')
 
-function copyHtml () {
-  return src(assetsSrc)
+function copyAssets () {
+  return src(assetsInSrc)
     .pipe(dest(distDir))
 }
 
@@ -25,11 +26,11 @@ function copySJS () {
 }
 
 function watch () {
-  gulp.watch(assetsSrc, copyHtml)
+  gulp.watch(assetsInSrc, copyAssets)
   gulp.watch(SjsSrc, copySJS)
 }
 
 gulp.task('clean:br', () => Promise.resolve(rimraf.sync(distDir + '**/*.br')))
 
-exports.copy = parallel(copyHtml, copySJS)
+exports.default = exports.copy = parallel(copyAssets, copySJS)
 exports.watch = series(exports.copy, watch)

@@ -1,0 +1,120 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: "Roboto Slab", "Noto Serif", "Droid Serif", Verdana, "Courier New", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei", "Source Han Sans CN", "Noto Sans CJK SC", serif,
+    -apple-system, BlinkMacSystemFont, "Noto Color Emoji", "Twemoji Mozilla", "Segoe UI Emoji";
+}
+h1:not(main > h1), h2, h3 {
+  font-family: "Open Sans", "Fira Sans", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+main {
+  display: grid;
+  grid-template-areas:
+    "title title"
+    "contact contact"
+    ". skills"
+    ". skills"
+    ". skills";
+  grid-column-gap: 2rem;
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+main > h1, article > h1 {
+  color: #AE3320;
+  margin-bottom: 0.5rem;
+}
+h3 {
+  margin-bottom: 0.3rem;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+.experience summary {
+  display: flex;
+  flex-wrap: wrap;
+}
+.experience summary > span:first-child {
+  flex: 1;
+  min-width: 14em;
+}
+.experience summary > span:last-child {
+  flex: 0 0 12em;
+  font-weight: normal;
+  color: #6E6B6C;
+}
+ul {
+  list-style: none;
+  margin: 0;
+}
+ul > li:before {
+  content: "• ";
+  color: #AE3320;
+}
+ul, ol {
+  padding-left: 1.5rem;
+}
+.title {
+  grid-area: title;
+  justify-self: center;
+}
+.contact {
+  grid-area: contact;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+.contact li:before {
+  content: "";
+}
+.skills {
+  grid-area: skills;
+}
+.separator {
+  min-width: 4em;
+  text-align: center;
+}
+details > summary + ul {
+  transition: .5s;
+  overflow: hidden;
+}
+
+@media (max-width: 680px) {
+  main {
+    display: block;
+  }
+  .contact {
+    display: block;
+  }
+  main > h1, article > h1 {
+    text-align: center;
+  }
+  .separator {
+    display: none;
+  }
+}
+@media print {
+  body {
+    margin: 0px;
+    font-size: 14px;
+  }
+}

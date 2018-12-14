@@ -1,0 +1,8 @@
+before_install:
+  - cat /etc/os-release
+  - uname -a
+  - pwd
+  - ls -lh
+
+script:
+  - npm run build && npm run minify
