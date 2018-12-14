@@ -44,5 +44,3 @@ jobs:
         repo: Nullizer/nullizer.github.io
         on:
           branch: master
-          # condition: $TRAVIS_OS_NAME = linux
-          # node: node
