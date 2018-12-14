@@ -1,6 +1,6 @@
 os:
-  - osx
   - linux
+  - osx
 
 dist: xenial
 
@@ -14,7 +14,6 @@ node_js:
   - "lts/*"
 
 before_install:
-  - cat /etc/os-release
   - uname -a
   - pwd
   - ls -lh
@@ -23,8 +22,10 @@ script:
   - npm run build && npm run minify
 
 after_script:
-  - ls -lh
   - tree -h temp/
+
+before_deploy:
+  - ls -lh
 
 jobs:
   include:
