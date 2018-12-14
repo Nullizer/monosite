@@ -19,6 +19,7 @@ node_js:
 
 before_install:
   - uname -a
+  - mount
   - pwd
   - ls -lh
 
@@ -39,7 +40,7 @@ jobs:
       deploy:
         provider: pages
         skip_cleanup: true
-        api_key: $GITHUB_TOKEN
+        github-token: $GITHUB_TOKEN
         local-dir: ./temp/dist
         repo: Nullizer/nullizer.github.io
         on:
