@@ -6,7 +6,11 @@ dist: xenial
 
 addons:
   apt:
-    packages: tree
+    packages:
+      - tree
+  homebrew:
+    packages:
+      - tree
 
 language: node_js
 node_js:
@@ -29,8 +33,9 @@ before_deploy:
 
 jobs:
   include:
+    - stage: Build For Release
+      script: npm run build && npm run minify
     - stage: GitHub Page Deploy
-      script: echo "Deploying to GitHub Page ..."
       deploy:
         provider: pages
         skip_cleanup: true
