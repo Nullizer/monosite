@@ -14,8 +14,8 @@ addons:
 
 language: node_js
 node_js:
-  - "node"
-  - "lts/*"
+  - node
+  - lts/*
 
 before_install:
   - uname -a
@@ -43,5 +43,6 @@ jobs:
         github-token: $GITHUB_TOKEN
         local-dir: ./temp/dist
         repo: Nullizer/nullizer.github.io
+        target-branch: master
         on:
           branch: master
