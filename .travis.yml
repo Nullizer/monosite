@@ -1,6 +1,6 @@
 os:
-  - linux
   - osx
+  - linux
 
 dist: xenial
 
@@ -24,12 +24,10 @@ script:
 
 after_script:
   - ls -lh
-  - tree temp/
+  - tree -h temp/
 
 jobs:
   include:
-    - script: echo "Running unit job 1 ?"
-    - script: echo "Running unit job 2 ?"
     - stage: GitHub Page Deploy
       script: echo "Deploying to GitHub Page ..."
       deploy:
