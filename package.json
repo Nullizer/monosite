@@ -21,7 +21,7 @@
   "devDependencies": {
     "@types/fs-extra": "^5.0.4",
     "@types/ip": "0.0.32",
-    "@types/ramda": "^0.25.43",
+    "@types/ramda": "^0.25.44",
     "@types/react": "^16.7.17",
     "@types/react-dom": "^16.0.11",
     "@types/rimraf": "^2.0.2",
