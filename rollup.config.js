@@ -5,7 +5,8 @@ import base from './rollup.baseconf.mjs'
 import typescript from 'rollup-plugin-typescript2'
 
 const isProd = process.env.NODE_ENV === 'production'
-const components = ['PureComponent', 'createElement', 'Fragment', 'lazy', 'Suspense', 'StrictMode', 'memo']
+const components = ['PureComponent', 'createElement', 'Fragment', 'lazy',
+  'Suspense', 'StrictMode', 'memo', 'useState']
 
 export default {
   ...base,
@@ -19,7 +20,7 @@ export default {
     }),
     typescript({ cacheRoot: './temp/.rts2_cache' }),
     replace({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': isProd ? JSON.stringify('production') : JSON.stringify('development')
     })
   ]
 }

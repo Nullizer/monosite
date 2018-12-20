@@ -1,39 +1,16 @@
-os:
-  - linux
-  - osx
-
-dist: xenial
-
-addons:
-  apt:
-    packages:
-      - tree
-  homebrew:
-    packages:
-      - tree
-
 language: node_js
 node_js:
-  - node
   - lts/*
 
 script:
   - npm run build && npm run minify
 
-after_script:
-  - tree -h temp/
-
-jobs:
-  include:
-    - stage: Build For Release
-      script: npm run build && npm run minify
-    - stage: GitHub Page Deploy
-      deploy:
-        provider: pages
-        skip_cleanup: true
-        github-token: $GITHUB_TOKEN
-        local-dir: ./temp/dist
-        repo: Nullizer/nullizer.github.io
-        target-branch: master
-        on:
-          branch: master
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: ./temp/dist
+  repo: Nullizer/nullizer.github.io
+  target-branch: master
+  on:
+    branch: master
