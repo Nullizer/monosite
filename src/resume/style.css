@@ -23,15 +23,44 @@ a:hover {
 main {
   display: grid;
   grid-template-areas:
-    "title title"
-    "contact contact"
-    ". skills"
-    ". skills"
-    ". skills";
+    "title      title"
+    "contact    contact"
+    "intro      skills"
+    "experience skills"
+    "education  skills";
   grid-column-gap: 2rem;
   max-width: 70rem;
   margin-left: auto;
   margin-right: auto;
+}
+.title {
+  grid-area: title;
+  justify-self: center;
+}
+.contact {
+  grid-area: contact;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+.contact li:before {
+  content: "";
+}
+.intro {
+  grid-area: intro;
+}
+.experience {
+  grid-area: experience;
+}
+.education {
+  grid-area: education;
+}
+.skills {
+  grid-area: skills;
 }
 main > h1, article > h1 {
   color: #AE3320;
@@ -68,26 +97,6 @@ ul > li:before {
 }
 ul, ol {
   padding-left: 1.5rem;
-}
-.title {
-  grid-area: title;
-  justify-self: center;
-}
-.contact {
-  grid-area: contact;
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
-}
-.contact li:before {
-  content: "";
-}
-.skills {
-  grid-area: skills;
 }
 .separator {
   min-width: 4em;

@@ -14,6 +14,8 @@ const textAssets = [
   '**/*.json',
 ].map(t => distDir + t)
 
+const isProd = process.env.NODE_ENV === 'production'
+
 module.exports = {
-  srcDir, tempDir, distDir, vendorDir, textAssets
+  srcDir, tempDir, distDir, vendorDir, textAssets, isProd
 }
