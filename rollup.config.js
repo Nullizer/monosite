@@ -18,12 +18,12 @@ export default {
     {
       dir: 'temp/dist/esm',
       format: 'es',
-      // sourcemap: true
+      // sourcemap: !isProd
     },
     {
       dir: 'temp/dist/sys',
       format: 'system',
-      // sourcemap: true
+      // sourcemap: !isProd
     }
   ],
   plugins: [

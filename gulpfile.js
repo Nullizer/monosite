@@ -25,7 +25,7 @@ function copyAssets () {
     .pipe(dest(distDir))
 }
 
-function postcssTransform () {
+function _postcssTransform () {
   return postcss([
     autoprefixer({ grid: true }),
     isProd ? require('cssnano') : null,
@@ -36,13 +36,13 @@ function compileSASS () {
   const sass = require('gulp-sass')
   return src(sassSrc)
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcssTransform())
+    .pipe(_postcssTransform())
     .pipe(dest(distDir))
 }
 
 function compileCSS () {
   return src(cssSrc)
-    .pipe(postcssTransform())
+    .pipe(_postcssTransform())
     .pipe(dest(distDir))
 }
 
@@ -89,7 +89,7 @@ exports.minifyJS = function minifyJS () {
 
 gulp.task('clean:br', () => Promise.resolve(rimraf.sync(distDir + '**/*.br')))
 
-function exportAndDefault () {
+function _exportAndDefault () {
   const funcs = [...arguments]
   funcs.forEach(func => { exports[func.name] = func })
   exports.default = parallel.apply(null, funcs)
@@ -100,5 +100,5 @@ function watch () {
   gulp.watch(sassSrc, compileSASS)
 }
 
-exportAndDefault(copyAssets, compileSASS, compileCSS, copyVendor, genIEwarn)
+_exportAndDefault(copyAssets, compileSASS, compileCSS, copyVendor, genIEwarn)
 exports.watch = series(exports.default, watch)
