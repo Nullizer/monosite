@@ -98,6 +98,7 @@ function _exportAndDefault () {
 function watch () {
   gulp.watch(assetsInSrc, copyAssets)
   gulp.watch(sassSrc, compileSASS)
+  gulp.watch(cssSrc, compileCSS)
 }
 
 _exportAndDefault(copyAssets, compileSASS, compileCSS, copyVendor, genIEwarn)

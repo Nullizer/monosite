@@ -10,7 +10,6 @@ const reactComponents = ['PureComponent', 'createElement', 'Fragment', 'lazy',
   'Suspense', 'StrictMode', 'memo', 'useState']
 
 export default {
-  experimentalCodeSplitting: true,
   input: [
     'src/main.tsx'
   ],
