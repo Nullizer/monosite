@@ -1,5 +1,5 @@
 image:
-  - Windows Server 2016
+  - Visual Studio 2017
   - Ubuntu1804
 
 stack: node 11
