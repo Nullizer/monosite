@@ -1,0 +1,23 @@
+image:
+  - Visual Studio 2017
+  - Ubuntu1804
+
+stack: node 11
+
+environment:
+  APPVEYOR_YML_DISABLE_PS_LINUX: true
+
+install:
+  - ps: Install-Product node '' x64
+  - npm install
+
+before_build:
+  - ps: "[System.Environment]::OSVersion.Version"
+  - sh: cat /etc/os-release
+  - sh: uname -a
+  - git --version
+  - node --version
+  - npm --version
+
+build_script:
+  - npm run build && npm run minify
