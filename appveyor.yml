@@ -1,5 +1,5 @@
 image:
-  - Visual Studio 2017
+  - Windows Server 2016
   - Ubuntu1804
 
 stack: node 11
@@ -12,7 +12,7 @@ install:
   - npm install
 
 before_build:
-  - ps: "[System.Environment]::OSVersion.Version"
+  - ps: "[System.Environment]::OSVersion"
   - sh: cat /etc/os-release
   - sh: uname -a
   - git --version
