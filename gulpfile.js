@@ -2,11 +2,10 @@
 const { resolve } = require('path')
 const { src, dest, parallel, series } = require('gulp')
 const gulp = require('gulp')
-const { srcDir, distDir, vendorDir } = require('./tasks/config')
+const { isProd, srcDir, distDir, vendorDir } = require('./tasks/config')
 const rimraf = require('rimraf')
 const Transform = require('stream').Transform
 const { minify } = require('terser')
-const { isProd } = require('./tasks/config')
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 
@@ -15,8 +14,9 @@ const assetsInSrc = [
   '**/*.ico',
   '**/*.png',
   '**/*.svg',
-  '**/xml',
+  '**/*.xml',
 ].map(p => srcDir + p)
+
 const sassSrc = srcDir + '**/*.scss'
 const cssSrc = srcDir + '**/*.css'
 
@@ -87,7 +87,34 @@ exports.minifyJS = function minifyJS () {
     .pipe(dest(distDir))
 }
 
-gulp.task('clean:br', () => Promise.resolve(rimraf.sync(distDir + '**/*.br')))
+exports.makeBr = function makeBr () {
+  const { compress } = require('iltorb')
+
+  const generatedTextAssets = [
+    '**/*.js',
+    '**/*.html',
+    '**/*.css',
+    '**/*.json',
+    '**/*.svg',
+    '**/*.xml',
+  ].map(t => distDir + t)
+
+  return src(generatedTextAssets)
+    .pipe(new Transform({
+      objectMode: true,
+      transform: (file, enc, cb) => {
+        console.log(`Generating .br for ${file.path}`)
+        compress(file.contents).then(br => {
+          file.path += '.br'
+          file.contents = Buffer.from(br)
+          cb(null, file)
+        })
+      }
+    }))
+    .pipe(dest(distDir))
+}
+
+exports.cleanBr = () => Promise.resolve(rimraf.sync(distDir + '**/*.br'))
 
 function _exportAndDefault () {
   const funcs = [...arguments]

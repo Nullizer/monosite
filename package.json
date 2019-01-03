@@ -38,7 +38,6 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-typescript": "^0.14.0",
     "fs-extra": "^7.0.1",
-    "globby": "^8.0.1",
     "gulp": "^4.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
@@ -57,7 +56,6 @@
     "rollup-plugin-typescript2": "^0.18.1",
     "systemjs": "^2.1.1",
     "terser": "^3.14.0",
-    "tslib": "^1.9.3",
     "typescript": "^3.2.2",
     "typescript-eslint-parser": "^21.0.2"
   },

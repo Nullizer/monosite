@@ -12,5 +12,6 @@ deploy:
   local-dir: ./temp/dist
   repo: Nullizer/nullizer.github.io
   target-branch: master
+  keep-history: true
   on:
     branch: master
