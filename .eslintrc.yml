@@ -17,5 +17,7 @@ rules:
   import/no-duplicates: "off"
   no-unused-vars: "warn"
   react/self-closing-comp: "warn"
+  react-hooks/rules-of-hooks: "error"
 plugins:
   - typescript
+  - react-hooks

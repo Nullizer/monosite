@@ -10,7 +10,7 @@ document.body.insertBefore(root, document.body.firstElementChild)
 
 const Heading = memo((props: {name: string}) =>
   <Fragment>
-    <h1>Hello, world!</h1>
+    <h1>Hello, {props.name}!</h1>
     <h2>This is a lab page</h2>
   </Fragment>)
 

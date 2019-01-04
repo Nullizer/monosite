@@ -7,7 +7,7 @@ import typescript from 'rollup-plugin-typescript2'
 const { isProd } = require('./tasks/config')
 
 const reactComponents = ['PureComponent', 'createElement', 'Fragment', 'lazy',
-  'Suspense', 'StrictMode', 'memo', 'useState']
+  'Suspense', 'StrictMode', 'memo', 'useState', 'useEffect']
 
 export default {
   input: [

@@ -1,35 +1,25 @@
 import * as React from 'react'
-import { PureComponent } from 'react'
+import { useState, useEffect } from 'react'
+import { format } from 'date-fns'
 
-interface ClockState {
-  date: Date
-}
+export default function Clock () {
+  // eslint-disable-next-line no-unused-vars
+  const [date, setDate] = useState(new Date())
 
-export class Clock extends PureComponent<{}, ClockState> {
-  timer?: number
-  constructor (props: {}) {
-    super(props)
-    this.state = { date: new Date() }
-  }
-  componentDidMount () {
-    this.timer = window.setInterval(this.tick, 1000)
-  }
-  componentWillUnmount () {
-    clearInterval(this.timer as number)
-  }
-  tick = () => {
-    this.setState({
-      date: new Date()
-    })
-  }
-  render () {
-    return (
-      <div>
-        <h1>Clock Panel</h1>
-        <FormattedDate date={new Date()} />
-      </div>
-    )
-  }
+  useEffect(() => {
+    console.log('useEffect callback called!')
+    const timer = window.setInterval(() => setDate(new Date()), 1000)
+    return () => {
+      clearInterval(timer)
+    }
+  }, [])
+
+  return (
+    <div>
+      <h1>Clock Panel</h1>
+      <FormattedDate date={date} />
+    </div>
+  )
 }
 
 interface FormattedDateProps {
@@ -37,7 +27,5 @@ interface FormattedDateProps {
 }
 
 function FormattedDate (props: FormattedDateProps) {
-  return <h2>Now is {props.date.toLocaleTimeString()}.</h2>
+  return <h2>Now is {format(props.date, 'HH:mm:ss O')}.</h2>
 }
-
-export default Clock
