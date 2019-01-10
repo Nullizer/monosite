@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@emotion/core": "^10.0.6",
     "@types/fs-extra": "^5.0.4",
     "@types/ramda": "^0.25.46",
     "@types/react": "^16.7.18",
@@ -39,7 +40,9 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-typescript": "^0.14.0",
     "gulp": "^4.0.0",
+    "gulp-nunjucks": "^4.0.0",
     "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "iltorb": "^2.4.1",
     "node-sass": "^4.11.0",

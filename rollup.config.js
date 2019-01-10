@@ -6,12 +6,12 @@ import typescript from 'rollup-plugin-typescript2'
 
 const { isProd } = require('./tasks/config')
 
-const reactComponents = ['PureComponent', 'createElement', 'Fragment', 'lazy',
-  'Suspense', 'StrictMode', 'memo', 'useState', 'useEffect']
+const reactComponents = ['PureComponent', 'createElement', 'createContext', 'forwardRef',
+  'Fragment', 'lazy', 'Component', 'Suspense', 'StrictMode', 'memo', 'useState', 'useEffect']
 
 export default {
   input: [
-    'src/main.tsx'
+    'src/app.tsx'
   ],
   output: [
     {

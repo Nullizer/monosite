@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import { format } from 'date-fns'
 
 export default function Clock () {
-  // eslint-disable-next-line no-unused-vars
   const [date, setDate] = useState(new Date())
 
   useEffect(() => {

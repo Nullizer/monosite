@@ -8,6 +8,8 @@ const Transform = require('stream').Transform
 const { minify } = require('terser')
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
+const nunjucks = require('gulp-nunjucks')
+const rename = require('gulp-rename')
 
 const assetsInSrc = [
   '**/*.html',
@@ -19,6 +21,15 @@ const assetsInSrc = [
 
 const sassSrc = srcDir + '**/*.scss'
 const cssSrc = srcDir + '**/*.css'
+
+function compileHtml () {
+  return src(srcDir + '**/!(_)*.njk')
+    .pipe(nunjucks.compile())
+    .pipe(rename({
+      extname: '.html'
+    }))
+    .pipe(dest(distDir))
+}
 
 function copyAssets () {
   return src(assetsInSrc)
@@ -128,5 +139,5 @@ function watch () {
   gulp.watch(cssSrc, compileCSS)
 }
 
-_exportAndDefault(copyAssets, compileSASS, compileCSS, copyVendor, genIEwarn)
+_exportAndDefault(copyAssets, compileHtml, compileSASS, compileCSS, copyVendor, genIEwarn)
 exports.watch = series(exports.default, watch)
