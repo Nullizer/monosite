@@ -21,7 +21,7 @@
   "devDependencies": {
     "@emotion/core": "^10.0.6",
     "@types/fs-extra": "^5.0.4",
-    "@types/ramda": "^0.25.46",
+    "@types/ramda": "^0.25.47",
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
     "@types/rimraf": "^2.0.2",
