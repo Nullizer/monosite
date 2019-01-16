@@ -1,9 +1,18 @@
+dist: xenial
+addons:
+  apt:
+    packages:
+    - tree
+
 language: node_js
 node_js:
-  - lts/*
+  - node
 
 script:
   - npm run build && npm run minify
+
+after_success:
+  - tree -h temp/dist
 
 deploy:
   provider: pages
