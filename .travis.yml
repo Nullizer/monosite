@@ -9,7 +9,7 @@ node_js:
   - node
 
 before_script:
-  - npm ls --depth 0
+  - npm ls --depth 0 || true
 
 script:
   - npm run build && npm run minify
