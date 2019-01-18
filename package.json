@@ -59,7 +59,7 @@
     "systemjs": "^3.0.0",
     "terser": "^3.14.1",
     "typescript": "^3.2.2",
-    "typescript-eslint-parser": "^21.0.2"
+    "typescript-eslint-parser": "^22.0.0"
   },
   "browserslist": [
     "ie >= 9",
