@@ -25,7 +25,7 @@
     "@types/react": "^16.7.22",
     "@types/react-dom": "^16.0.11",
     "@types/rimraf": "^2.0.2",
-    "autoprefixer": "^9.4.6",
+    "autoprefixer": "^9.4.7",
     "cross-env": "^5.2.0",
     "cssnano": "^4.1.8",
     "date-fns": "^2.0.0-alpha.27",
