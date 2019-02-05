@@ -19,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@emotion/core": "^10.0.6",
+    "@emotion/core": "^10.0.7",
     "@types/fs-extra": "^5.0.4",
     "@types/ramda": "^0.25.47",
     "@types/react": "^16.8.1",
