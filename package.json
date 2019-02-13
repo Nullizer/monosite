@@ -20,7 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "@emotion/core": "^10.0.7",
-    "@types/fs-extra": "^5.0.4",
+    "@types/fs-extra": "^5.0.5",
     "@types/ramda": "^0.25.48",
     "@types/react": "^16.8.2",
     "@types/react-dom": "^16.8.0",
