@@ -27,7 +27,7 @@
     "@types/rimraf": "^2.0.2",
     "autoprefixer": "^9.4.7",
     "cross-env": "^5.2.0",
-    "cssnano": "^4.1.9",
+    "cssnano": "^4.1.10",
     "date-fns": "^2.0.0-alpha.27",
     "eslint": "^5.13.0",
     "eslint-config-standard": "^12.0.0",
