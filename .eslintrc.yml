@@ -1,4 +1,4 @@
-parser: typescript-eslint-parser
+parser: '@typescript-eslint/parser'
 extends:
   - standard
   - standard-react
@@ -12,12 +12,11 @@ rules:
   space-in-parens: "warn"
   no-multiple-empty-lines: "warn"
   key-spacing: "warn"
-  typescript/no-unused-vars: "error"
   no-undef: "off" # interface will error
   import/no-duplicates: "off"
   no-unused-vars: "warn"
   react/self-closing-comp: "warn"
   react-hooks/rules-of-hooks: "error"
 plugins:
-  - typescript
+  - '@typescript-eslint'
   - react-hooks
