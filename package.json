@@ -60,7 +60,7 @@
     "rollup-plugin-typescript2": "^0.21.2",
     "systemjs": "^4.0.1",
     "terser": "^4.1.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.3"
   },
   "browserslist": [
     "ie >= 9",
