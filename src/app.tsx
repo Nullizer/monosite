@@ -46,6 +46,31 @@ render(
       🌈 🏯 🗽 🚆 📱 🎉 🗓 💸 🇫 🇴 🇳 🇹<br />
       🇺🇸 🇧🇷 🇲🇹 🇸🇪 🇳🇬 🇰🇭 🇭🇷 🇮🇩 🇳🇿 🇪🇬 🇨🇳 🇹🇼<br />
     </div>
+    <form action='./demo' method='post'>
+      <p>
+        <label htmlFor='oneline'>Fill（填空）:</label>
+        <input id='oneline' type='text' placeholder='fill this' />
+      </p>
+      <p>
+        <input type='checkbox' name='ck0' id='ck0_0' />Check here
+        <select>
+          <optgroup label='Group 1'>
+            <option>Option 1.1</option>
+          </optgroup>
+          <optgroup label='Group 2'>
+            <option>Option 2.1</option>
+            <option>Option 2.2</option>
+          </optgroup>
+          <optgroup label='Group 3' disabled>
+            <option>Option 3.1</option>
+            <option>Option 3.2</option>
+            <option>Option 3.3</option>
+          </optgroup>
+        </select>
+      </p>
+      <textarea name='ta' placeholder='A textarea'></textarea>
+      <button type='reset'>Reset（重置）</button>
+    </form>
     <p>{navigator.userAgent}</p>
   </StrictMode>,
   document.getElementById('app')

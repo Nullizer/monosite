@@ -7,13 +7,20 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-  Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI Light",
-  sans-serif, "Noto Color Emoji", "Twemoji Mozilla", "Segoe UI Emoji";
-  // Twemoji Mozilla is builtin emoji-font in Firefox. IE need delare Segoe UI Emoji explicit
-  // Microsoft not contain any country flags in their emojis
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Semilight", "Helvetica Neue", Helvetica,
+    Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI Light", "Microsoft YaHei",
+    "Noto Color Emoji", "Twemoji Mozilla", "Segoe UI Emoji", sans-serif;
+    // Twemoji Mozilla is builtin emoji-font in Firefox. IE need delare Segoe UI Emoji explicit
+    // Microsoft not contain any country flags in their emojis
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
 // a {
 //   text-decoration: none;
 // }

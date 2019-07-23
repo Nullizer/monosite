@@ -6,6 +6,7 @@
   <title>Yin Zhikai's Resume</title>
   <base target="_blank">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto+Slab&display=swap" rel="stylesheet">
   <style id="dynamicStyle"></style>
   <script nomodule>/*@cc_on document.write('\x3Cscript id="_iealwn_js" src="/vendor/old-ie-warn.js">\x3C/script>'); @*/</script>
 </head>
@@ -113,17 +114,19 @@
     </article>
   </main>
   <script>
-    const heights = Array.from(document.querySelectorAll('details > summary + ul'))
-      .map(ul => parseInt(getComputedStyle(ul).height))
-    document.getElementById('dynamicStyle').innerHTML = `
-      @media screen {
-        details > summary + ul {
-          max-height: 0;
-        }
-        details[open] > summary + ul {
-          max-height: ${Math.max.apply(null, heights)}px;
-        }
-      }`
+    document.addEventListener('load', () => {
+        const heights = Array.from(document.querySelectorAll('details > summary + ul'))
+          .map(ul => parseInt(getComputedStyle(ul).height))
+        document.getElementById('dynamicStyle').innerHTML = `
+          @media screen {
+            details > summary + ul {
+              max-height: 0;
+            }
+            details[open] > summary + ul {
+              max-height: ${Math.max.apply(null, heights)}px;
+            }
+          }`
+    })
   </script>
 </body>
 </html>
