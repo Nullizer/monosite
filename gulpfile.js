@@ -38,7 +38,7 @@ function copyAssets () {
 
 function _postcssTransform () {
   return postcss([
-    autoprefixer({ grid: true }),
+    autoprefixer({ grid: 'autoplace' }),
     isProd ? require('cssnano') : null,
   ].filter(x => x))
 }
@@ -86,7 +86,7 @@ function genIEwarn () {
 }
 
 exports.minifyJS = function minifyJS () {
-  return src(distDir + '!(vendor)**/*.js')
+  return src(distDir + '!(vendor)**/**/*.js')
     .pipe(new Transform({
       objectMode: true,
       transform: (file, enc, cb) => {

@@ -25,11 +25,22 @@ export default {
       // sourcemap: !isProd
     }
   ],
+  /**
+   * @param {string} id
+   */
+  manualChunks (id) {
+    if (id.includes('node_modules')) {
+      if (id.includes('ramda/')) return 'vendor/ramda'
+      if (id.includes('date-fns/')) return 'vendor/date-fns'
+      if (id.includes('@emotion/')) return 'vendor/@emotion'
+      return 'vendor'
+    }
+  },
   plugins: [
     resolve(),
     commonjs({
       namedExports: {
-        'react': reactComponents,
+        react: reactComponents,
         'react-dom': ['render'],
       }
     }),
