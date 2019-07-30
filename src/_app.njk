@@ -12,27 +12,15 @@
   </head>
   <body>
     <main id="app"></main>
+    <script nomodule crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2Cfetch"></script>
     <script>
-      import("./esm/{{ entry }}.js")
-      window.supportsDynamicImport = true
-    </script>
-    <script nomodule src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch&flags=gated"></script>
-    <script>
-      if (!window.supportsDynamicImport) {
-        var systemJsLoaderTag = document.createElement('script')
-        systemJsLoaderTag.src = 'vendor/s.min.js'
-        systemJsLoaderTag.addEventListener('load', function () {
-          var sysModLoaderTag = document.createElement('script')
-          sysModLoaderTag.setAttribute('type', 'module')
-          sysModLoaderTag.innerHTML = "System.import('./sys/{{ entry }}.js')"
-          document.body.appendChild(sysModLoaderTag)
-
-          var legacyLoaderTag = document.createElement('script')
-          legacyLoaderTag.setAttribute('nomodule', '')
-          legacyLoaderTag.innerHTML = "System.import('./es5/{{ entry }}.js')"
-          document.body.appendChild(legacyLoaderTag)
-        })
-        document.head.appendChild(systemJsLoaderTag)
+      try {
+        new Function('import("./esm/{{ entry }}.js")')()
+      } catch (e) {
+        var s = document.createElement('script')
+        s.src = 'vendor/shimport.js'
+        s.dataset.main = "./es5/{{ entry }}.js"
+        document.head.appendChild(s)
       }
     </script>
   </body>

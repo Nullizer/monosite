@@ -58,7 +58,8 @@ function compileCSS () {
 }
 
 function copyVendor () {
-  return src(resolve(__dirname, 'node_modules/systemjs/dist/s.min.js'))
+  return src(resolve(__dirname, 'node_modules/shimport/index.js'))
+    .pipe(rename({ basename: 'shimport' }))
     .pipe(dest(vendorDir))
 }
 
