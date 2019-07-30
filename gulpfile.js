@@ -91,7 +91,7 @@ exports.minifyJS = function minifyJS () {
       objectMode: true,
       transform: (file, enc, cb) => {
         console.log(`Minify ${file.path}`)
-        file.contents = Buffer.from(minify(String(file.contents)).code)
+        file.contents = Buffer.from(minify(String(file.contents), { module: true }).code)
         cb(null, file)
       }
     }))

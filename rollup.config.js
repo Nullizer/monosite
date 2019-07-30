@@ -31,7 +31,6 @@ export default {
    */
   manualChunks (id) {
     if (id.includes('node_modules/')) {
-      console.log(id)
       const dirsInPath = id.split(sep)
       const moduleName = dirsInPath[dirsInPath.indexOf('node_modules') + 1]
       if (moduleName) return `vendor/${moduleName}`
