@@ -43,7 +43,7 @@
     "gulp": "^4.0.2",
     "gulp-nunjucks": "^5.0.1",
     "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^1.4.0",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.2",
     "iltorb": "^2.4.3",
     "node-sass": "^4.12.0",
