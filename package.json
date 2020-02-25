@@ -58,7 +58,7 @@
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-typescript2": "^0.24.3",
     "shimport": "^1.0.1",
-    "terser": "^4.3.8",
+    "terser": "^4.6.4",
     "typescript": "^3.6.3"
   },
   "browserslist": [
