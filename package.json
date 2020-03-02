@@ -59,7 +59,7 @@
     "rollup-plugin-typescript2": "^0.24.3",
     "shimport": "^1.0.1",
     "terser": "^4.3.8",
-    "typescript": "^3.6.3"
+    "typescript": "^3.8.3"
   },
   "browserslist": [
     "ie >= 9",
